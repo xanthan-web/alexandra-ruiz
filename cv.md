@@ -1,12 +1,30 @@
 ---
 title: Curriculum Vitae
 layout: base
-css:
+css: cv.css
 homepage: TRUE
 position: 4
 summary: My CV reflects a career at the intersection of creative practice, research, and pedagogy. It documents publications, grants, teaching, and collaborative projects, showing how my work in digital humanities, kinetic sculpture, and public engagement has evolved over time. This record provides insight into the diverse ways I connect scholarship, creativity, and community impact.
 thumbnail: assets/images/Augustine_Lateran.jpg
 ---
+
+{% capture cv_alert %}Typography isn't decoration — it shapes how a document feels. Toggle between a clean sans-serif (Inter + Source Sans 3) and a classical serif pairing (Playfair Display + Lora) to see the same content read differently. <button id="typo-toggle-btn" onclick="toggleCvTypography()" style="margin-left:0.75rem; padding:0.2rem 0.75rem; cursor:pointer;">Switch to serif</button>{% endcapture %}
+{% include typography/alert.html class="info" title="A note on typography" text=cv_alert %}
+
+<script>
+function toggleCvTypography() {
+  var link = document.querySelector('link[href*="cv.css"], link[href*="cv-playfair.css"]');
+  var btn = document.getElementById('typo-toggle-btn');
+  if (!link) return;
+  if (link.href.includes('cv-playfair')) {
+    link.href = link.href.replace('cv-playfair.css', 'cv.css');
+    btn.textContent = 'Switch to serif';
+  } else {
+    link.href = link.href.replace('cv.css', 'cv-playfair.css');
+    btn.textContent = 'Switch to sans-serif';
+  }
+}
+</script>
 
 # Alexandra Ruiz
 Email: aruiz@university.edu • Phone: (505) 555-3482  

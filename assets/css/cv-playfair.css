@@ -1,0 +1,36 @@
+/* CV serif typography: Playfair Display + Lora
+   Pairs a classic editorial display face with Lora's warm body text.
+   Also applies CV tight spacing (same as cv.css).
+   Use via front matter: css: cv-playfair.css
+   Lora is already imported in base.css; only Playfair Display is added here. */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&display=swap');
+
+/* --- Font overrides --- */
+:root {
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-body: 'Lora', Georgia, serif;
+}
+
+/* Playfair has tight built-in spacing — negative tracking makes it worse */
+h1, h2, h3, h4, h5, h6 { letter-spacing: 0; }
+
+/* Playfair's x-height is smaller than Inter — bump scale slightly */
+h1 { font-size: 2.75rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.6rem; }
+
+/* Lora is denser than Source Sans — tighter line-height reads better */
+p, li { line-height: 1.75; }
+
+/* --- CV tight spacing (same as cv.css) --- */
+h1 { margin-top: 0.5rem;  margin-bottom: 0.15rem; }
+h2 { margin-top: 0.75rem; margin-bottom: 0.15rem; }
+h3 { margin-top: 0.6rem;  margin-bottom: 0.1rem;  }
+h4 { margin-top: 0.5rem;  margin-bottom: 0.1rem;  }
+h5 { margin-top: 0.4rem;  margin-bottom: 0.1rem;  }
+
+p               { margin-bottom: 0.4rem; }
+ul, ol          { margin-bottom: 0.4rem; }
+.container li   { margin-bottom: 0.15rem; }
+hr              { margin: 0.5rem 0; }
